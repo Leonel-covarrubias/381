@@ -1,0 +1,2 @@
+# Hashes of file build rules.
+bb4ec8ed5cec936d83223e94e2ac8374 raylib-cpp/raylib/raylib/external/glfw/src/CMakeFiles/update_mappings
