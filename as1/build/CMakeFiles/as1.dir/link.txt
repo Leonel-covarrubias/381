@@ -1,0 +1,1 @@
+/usr/bin/g++ -g CMakeFiles/as1.dir/src/environment.cpp.o -o as1  raylib-cpp/raylib/raylib/libraylib.a -lm -latomic -lpthread /usr/lib/x86_64-linux-gnu/libOpenGL.so /usr/lib/x86_64-linux-gnu/libGLX.so raylib-cpp/raylib/raylib/external/glfw/src/libglfw3.a /usr/lib/x86_64-linux-gnu/librt.a -lm -ldl 

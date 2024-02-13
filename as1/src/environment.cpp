@@ -1,114 +1,114 @@
 #include "raylib-cpp.hpp"
 #include "rlgl.h"
 
-struct Skybox{
-    raylib::Texture texture; 
-    raylib::Shader shader; 
-    raylib::Model cube; 
+// struct Skybox{
+//     raylib::Texture texture; 
+//     raylib::Shader shader; 
+//     raylib::Model cube; 
     
-    Skybox(): shader (0){} 
+//     Skybox(): shader (0){} 
 
 
-    void Init(){
-    auto gen = raylib::Mesh::Cube(1,1,1); 
-    cube =((raylib::Mesh*)(&gen))->LoadModelFrom(); 
+//     void Init(){
+//     auto gen = raylib::Mesh::Cube(1,1,1); 
+//     cube =((raylib::Mesh*)(&gen))->LoadModelFrom(); 
 
-    shader = raylib::Shader::LoadFromMemory (R"C++(
-#version 330
+//     shader = raylib::Shader::LoadFromMemory (R"C++(
+// #version 330
 
-// Input vertex attributes
-in vec3 vertexPosition;
+// // Input vertex attributes
+// in vec3 vertexPosition;
 
-// Input uniform values
-uniform mat4 matProjection;
-uniform mat4 matView;
+// // Input uniform values
+// uniform mat4 matProjection;
+// uniform mat4 matView;
 
-// Output vertex attributes (to fragment shader)
-out vec3 fragPosition;
+// // Output vertex attributes (to fragment shader)
+// out vec3 fragPosition;
 
-void main()
-{
-    // Calculate fragment position based on model transformations
-    fragPosition = vertexPosition;
+// void main()
+// {
+//     // Calculate fragment position based on model transformations
+//     fragPosition = vertexPosition;
 
-    // Remove translation from the view matrix
-    mat4 rotView = mat4(mat3(matView));
-    vec4 clipPos = matProjection*rotView*vec4(vertexPosition, 1.0);
+//     // Remove translation from the view matrix
+//     mat4 rotView = mat4(mat3(matView));
+//     vec4 clipPos = matProjection*rotView*vec4(vertexPosition, 1.0);
 
-    // Calculate final vertex position
-    gl_Position = clipPos;
-}
+//     // Calculate final vertex position
+//     gl_Position = clipPos;
+// }
 
-    )C++", R"C++(
-#version 330
+//     )C++", R"C++(
+// #version 330
 
-// Input vertex attributes (from vertex shader)
-in vec3 fragPosition;
+// // Input vertex attributes (from vertex shader)
+// in vec3 fragPosition;
 
-// Input uniform values
-uniform samplerCube environmentMap;
-uniform bool vflipped;
-uniform bool doGamma;
+// // Input uniform values
+// uniform samplerCube environmentMap;
+// uniform bool vflipped;
+// uniform bool doGamma;
 
-// Output fragment color
-out vec4 finalColor;
+// // Output fragment color
+// out vec4 finalColor;
 
-void main()
-{
-    // Fetch color from texture map
-    vec3 color = vec3(0.0);
+// void main()
+// {
+//     // Fetch color from texture map
+//     vec3 color = vec3(0.0);
 
-    if (vflipped) color = texture(environmentMap, vec3(fragPosition.x, -fragPosition.y, fragPosition.z)).rgb;
-    else color = texture(environmentMap, fragPosition).rgb;
+//     if (vflipped) color = texture(environmentMap, vec3(fragPosition.x, -fragPosition.y, fragPosition.z)).rgb;
+//     else color = texture(environmentMap, fragPosition).rgb;
 
-    if (doGamma)// Apply gamma correction
-    {
-        color = color/(color + vec3(1.0));
-        color = pow(color, vec3(1.0/2.2));
-    }
+//     if (doGamma)// Apply gamma correction
+//     {
+//         color = color/(color + vec3(1.0));
+//         color = pow(color, vec3(1.0/2.2));
+//     }
 
-    // Calculate final fragment color
-    finalColor = vec4(color, 1.0);
-}
-
-
-    )C++"); 
-    cube.materials[0].shader = shader; 
-    shader.SetValue("environmentMap", (int) MATERIAL_MAP_CUBEMAP, SHADER_UNIFORM_INT ); 
-
-    }
-    void Load(std::string filename){
-        shader.SetValue("doGamma", 0, SHADER_UNIFORM_INT); 
-        shader.SetValue("vlipped", 0, SHADER_UNIFORM_INT); 
+//     // Calculate final fragment color
+//     finalColor = vec4(color, 1.0);
+// }
 
 
-        raylib::Image img(filename); 
-        texture.Load(img, CUBEMAP_LAYOUT_AUTO_DETECT); 
-        texture.SetFilter(TEXTURE_FILTER_BILINEAR); 
+//     )C++"); 
+//     cube.materials[0].shader = shader; 
+//     shader.SetValue("environmentMap", (int) MATERIAL_MAP_CUBEMAP, SHADER_UNIFORM_INT ); 
 
-        cube.materials[0].maps [ MATERIAL_MAP_CUBEMAP].texture = texture; 
+//     }
+//     void Load(std::string filename){
+//         shader.SetValue("doGamma", 0, SHADER_UNIFORM_INT); 
+//         shader.SetValue("vlipped", 0, SHADER_UNIFORM_INT); 
+
+
+//         raylib::Image img(filename); 
+//         texture.Load(img, CUBEMAP_LAYOUT_AUTO_DETECT); 
+//         texture.SetFilter(TEXTURE_FILTER_BILINEAR); 
+
+//         cube.materials[0].maps [ MATERIAL_MAP_CUBEMAP].texture = texture; 
 
 
 
-    }
+//     }
 
-    void Draw(){ 
-        rlDisableBackfaceCulling(); 
-        rlDisableDepthMask(); 
-        cube.Draw({});
-        rlEnableBackfaceCulling();
-        rlEnableDepthMask();  
-    }
+//     void Draw(){ 
+//         rlDisableBackfaceCulling(); 
+//         rlDisableDepthMask(); 
+//         cube.Draw({});
+//         rlEnableBackfaceCulling();
+//         rlEnableDepthMask();  
+//     }
 
-};
+// };
 
 
 template <typename T>
-concept Transfromer = requires(T t, raylib:: Transform m){
+concept Transformer = requires(T t, raylib:: Transform m){
     {t.operator()(m) } -> std::convertible_to<raylib::Transform>; 
 };
 
-void DrawBoundedModel (raylib::Model& model, Transfromer auto transformer){
+void DrawBoundedModel (raylib::Model& model, Transformer auto transformer){
     raylib::Transform backupTransform = model.transform; 
     model.transform = transformer(backupTransform); 
     model.Draw({});
@@ -141,6 +141,10 @@ int main(){
     raylib::Model plane = LoadModel ("meshes/PolyPlane.glb");
     raylib::Model ship = LoadModel ("meshes/SmitHouston_Tug.glb");
     raylib::Model imperial = LoadModel("meshes/sw-imperial-shuttle-lambda-docked.glb");
+
+
+    
+
     raylib::Model defaultCube ("bad.obj"); 
     int x = 0; 
     while (!window.ShouldClose()){
@@ -158,6 +162,8 @@ int main(){
             camera.BeginMode();
             {
                 // defaultCube.Draw({0,0,-10}); 
+
+                plane.Draw({});
 
                 DrawBoundedModel(plane, [](raylib::Transform t) -> raylib ::Transform{
                     return t.Translate({0,0,0});

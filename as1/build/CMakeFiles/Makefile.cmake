@@ -117,7 +117,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/as0.dir/DependInfo.cmake"
+  "CMakeFiles/as1.dir/DependInfo.cmake"
   "raylib-cpp/raylib/raylib/CMakeFiles/raylib.dir/DependInfo.cmake"
   "raylib-cpp/raylib/raylib/external/glfw/src/CMakeFiles/glfw.dir/DependInfo.cmake"
   "raylib-cpp/raylib/raylib/external/glfw/src/CMakeFiles/update_mappings.dir/DependInfo.cmake"
