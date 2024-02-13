@@ -19,6 +19,6 @@ To run:
 
 (in the build directory)
 
-./as0
+./as1
 
 enumarate controls: NA 
