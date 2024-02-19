@@ -20,7 +20,7 @@ void DrawBoundedModel (raylib::Model& model, Transformer auto transformer){
 
 int main(){
     SetConfigFlags(FLAG_WINDOW_RESIZABLE);
-    raylib::Window window (800, 800, "CS381 - Assignment 1");
+    raylib::Window window (800, 800, "CS381 - Assignment 2");
     
 
     raylib::Model bad("bad.obj");
