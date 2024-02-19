@@ -40,14 +40,19 @@ int main(){
     raylib::Model plane = LoadModel ("meshes/PolyPlane.glb"); 
     auto mesh = raylib::Mesh::Plane (10'000,10'000, 50, 50, 25); 
     raylib::Model ground = ((raylib::Mesh*)&mesh)->LoadModelFrom(); 
-    raylib::Texture grass ("../textures/grass.jpg"); 
+    raylib::Texture grass ("textures/grass.jpg"); 
+
+    
+
     grass.SetFilter (TEXTURE_FILTER_BILINEAR); 
     grass.SetWrap(TEXTURE_WRAP_REPEAT); 
     ground.materials[0].maps[MATERIAL_MAP_DIFFUSE].texture = grass; 
 
-    float speed = 50; 
-    raylib::Vector3 position = {0,0,0}; 
-    raylib::Degree heading = 10; 
+    float speed = 0; 
+    float acceleration = 10; 
+    raylib::Vector3 position = {10,0,0}; 
+    raylib::Degree heading = 0; 
+    raylib::Vector3 velocity = {0,0,0}; 
    // cs31::SkyBox skybox ("../textures/skybox.png"); 
    
     raylib::Model defaultCube ("bad.obj"); 
@@ -62,31 +67,84 @@ int main(){
         window.BeginDrawing();
         {
                 window.ClearBackground(GRAY);
-           
-    
+               
+
             camera.BeginMode();
             {
+            
                 window.ClearBackground(GRAY); 
                 ground.Draw({0,0,0}); 
                 DrawBoundedModel(plane, [&position,&heading](raylib::Transform t) -> raylib ::Transform{
-                    return t.Translate(position).RotateY(heading).Scale(10,10,10);
+                    return t.Translate(position).RotateY(heading).Scale(2,2,2);
                 });
 
                 // if(IsKeyDown(KEY_W)){
                 //     position += raylib::Vector3::Right()*window.GetFrameTime(); 
                    
                 // } 
-
-                raylib::Vector3 velocity = {speed* cos(heading.RadianValue()),0,-speed * sin(heading.RadianValue())}; 
-                position += velocity * window.GetFrameTime(); 
-
-                if(IsKeyPressed(KEY_A))
-                    heading += 5; 
                
+             
+               
+
+                if(IsKeyDown(KEY_A)){
+                    speed += acceleration * window.GetFrameTime(); 
+                    velocity.x = speed; 
+                    velocity.y = 0;
+                    velocity.z = 0;
+                    
+                }
+
+                // if(IsKeyDown(KEY_S))
+                //     speed += acceleration * window.GetFrameTime(); 
+                //     velocity.z = -speed;
+                
+                if(IsKeyDown(KEY_D)){
+                    speed += acceleration * window.GetFrameTime(); 
+                    velocity.x = -speed; 
+                    velocity.y = 0;
+                    velocity.z = 0;
+                }
+                if(IsKeyDown(KEY_W)){
+                    speed += acceleration * window.GetFrameTime(); 
+                    velocity.x = 0; 
+                    velocity.y = 0;
+                    velocity.z = speed;
+                }
+                if(IsKeyDown(KEY_S)){
+                    speed += acceleration * window.GetFrameTime(); 
+                    velocity.x = 0; 
+                    velocity.y = 0;
+                    velocity.z = -speed;
+                }
+                if(IsKeyDown(KEY_Q)){
+                    speed += acceleration * window.GetFrameTime(); 
+                    velocity.x = 0; 
+                    velocity.y = speed;
+                    velocity.z =0;
+                }
+                 if(IsKeyDown(KEY_E)){
+                    speed += acceleration * window.GetFrameTime(); 
+                    velocity.x = 0; 
+                    if(position.y>=0){
+                        velocity.y = -speed;}
+                    else{
+                        velocity.y = 0;    
+                    }
+                    velocity.z =0;
+                }
+                if(IsKeyDown(KEY_SPACE)){
+                    speed += 0; 
+                    velocity.x = 0; 
+                    velocity.y = 0;
+                    velocity.z = 0;
+                }   
+
+                position += velocity * window.GetFrameTime(); 
                //skybox.Draw(); 
             }
             camera.EndMode(); 
         }
         window.EndDrawing();
+        
     }
 }

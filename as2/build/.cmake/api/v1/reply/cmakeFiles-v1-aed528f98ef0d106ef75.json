@@ -86,6 +86,9 @@
 			"path" : "textures/skybox.png"
 		},
 		{
+			"path" : "textures/grass.jpg"
+		},
+		{
 			"path" : "meshes/PolyPlane.glb"
 		},
 		{

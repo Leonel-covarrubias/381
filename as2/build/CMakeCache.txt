@@ -213,7 +213,7 @@ CMAKE_PROJECT_DESCRIPTION:STATIC=
 CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=as0
+CMAKE_PROJECT_NAME:STATIC=as2
 
 //Value Computed by CMake
 CMAKE_PROJECT_VERSION:STATIC=4.5.0
@@ -655,6 +655,15 @@ as0_IS_TOP_LEVEL:STATIC=ON
 
 //Value Computed by CMake
 as0_SOURCE_DIR:STATIC=/home/packnel87/Desktop/GameDev/as2
+
+//Value Computed by CMake
+as2_BINARY_DIR:STATIC=/home/packnel87/Desktop/GameDev/as2/build
+
+//Value Computed by CMake
+as2_IS_TOP_LEVEL:STATIC=ON
+
+//Value Computed by CMake
+as2_SOURCE_DIR:STATIC=/home/packnel87/Desktop/GameDev/as2
 
 //Path to a library.
 pthread:FILEPATH=/usr/lib/x86_64-linux-gnu/libpthread.a

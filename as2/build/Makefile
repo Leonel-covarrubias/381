@@ -182,17 +182,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named as0
+# Target rules for targets named as2
 
 # Build rule for target.
-as0: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 as0
-.PHONY : as0
+as2: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 as2
+.PHONY : as2
 
 # fast build rule for target.
-as0/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/as0.dir/build.make CMakeFiles/as0.dir/build
-.PHONY : as0/fast
+as2/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/as2.dir/build.make CMakeFiles/as2.dir/build
+.PHONY : as2/fast
 
 #=============================================================================
 # Target rules for targets named raylib
@@ -277,7 +277,7 @@ src/environement.o: src/environement.cpp.o
 
 # target to build an object file
 src/environement.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/as0.dir/build.make CMakeFiles/as0.dir/src/environement.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/as2.dir/build.make CMakeFiles/as2.dir/src/environement.cpp.o
 .PHONY : src/environement.cpp.o
 
 src/environement.i: src/environement.cpp.i
@@ -285,7 +285,7 @@ src/environement.i: src/environement.cpp.i
 
 # target to preprocess a source file
 src/environement.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/as0.dir/build.make CMakeFiles/as0.dir/src/environement.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/as2.dir/build.make CMakeFiles/as2.dir/src/environement.cpp.i
 .PHONY : src/environement.cpp.i
 
 src/environement.s: src/environement.cpp.s
@@ -293,7 +293,7 @@ src/environement.s: src/environement.cpp.s
 
 # target to generate assembly for a file
 src/environement.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/as0.dir/build.make CMakeFiles/as0.dir/src/environement.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/as2.dir/build.make CMakeFiles/as2.dir/src/environement.cpp.s
 .PHONY : src/environement.cpp.s
 
 # Help Target
@@ -311,7 +311,7 @@ help:
 	@echo "... package_source"
 	@echo "... rebuild_cache"
 	@echo "... update_mappings"
-	@echo "... as0"
+	@echo "... as2"
 	@echo "... buffered-raylib"
 	@echo "... glfw"
 	@echo "... libfastsignals"

@@ -40,6 +40,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "../raylib-cpp/raylib/src/external/glfw/CMake/glfw3Config.cmake.in"
   "../raylib-cpp/raylib/src/external/glfw/CMakeLists.txt"
   "../raylib-cpp/raylib/src/external/glfw/src/CMakeLists.txt"
+  "../textures/grass.jpg"
   "../textures/skybox.png"
   "/usr/share/cmake-3.22/Modules/BasicConfigVersion-SameMajorVersion.cmake.in"
   "/usr/share/cmake-3.22/Modules/CMakeCInformation.cmake"
@@ -90,6 +91,7 @@ set(CMAKE_MAKEFILE_OUTPUTS
 # Byproducts of CMake generate step:
 set(CMAKE_MAKEFILE_PRODUCTS
   "textures/skybox.png"
+  "textures/grass.jpg"
   "meshes/PolyPlane.glb"
   "CMakeFiles/CMakeDirectoryInformation.cmake"
   "raylib-cpp/CMakeFiles/CMakeDirectoryInformation.cmake"
@@ -113,7 +115,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/as0.dir/DependInfo.cmake"
+  "CMakeFiles/as2.dir/DependInfo.cmake"
   "raylib-cpp/raylib/raylib/CMakeFiles/raylib.dir/DependInfo.cmake"
   "raylib-cpp/raylib/raylib/external/glfw/src/CMakeFiles/glfw.dir/DependInfo.cmake"
   "raylib-cpp/raylib/raylib/external/glfw/src/CMakeFiles/update_mappings.dir/DependInfo.cmake"

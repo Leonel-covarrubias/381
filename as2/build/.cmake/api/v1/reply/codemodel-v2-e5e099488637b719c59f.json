@@ -196,7 +196,7 @@
 					[
 						0
 					],
-					"name" : "as0",
+					"name" : "as2",
 					"targetIndexes" : 
 					[
 						0
@@ -291,9 +291,9 @@
 			[
 				{
 					"directoryIndex" : 0,
-					"id" : "as0::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-as0-3b0070a4ddf1e024b7b2.json",
-					"name" : "as0",
+					"id" : "as2::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-as2-a6f6c940c78f82ea9b04.json",
+					"name" : "as2",
 					"projectIndex" : 0
 				},
 				{

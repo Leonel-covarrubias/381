@@ -1255,7 +1255,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "as0"
+			"value" : "as2"
 		},
 		{
 			"name" : "CMAKE_PROJECT_VERSION",
@@ -3519,6 +3519,42 @@
 		},
 		{
 			"name" : "as0_SOURCE_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "/home/packnel87/Desktop/GameDev/as2"
+		},
+		{
+			"name" : "as2_BINARY_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "/home/packnel87/Desktop/GameDev/as2/build"
+		},
+		{
+			"name" : "as2_IS_TOP_LEVEL",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "ON"
+		},
+		{
+			"name" : "as2_SOURCE_DIR",
 			"properties" : 
 			[
 				{
