@@ -1,0 +1,35 @@
+
+git submodule add https://github.com/joshuadahlunr/raylib-cpp.git
+
+
+
+For Compiling: 
+
+Delete Build folder
+
+mkdir build> cd build > cmake > make 
+
+
+
+
+
+
+
+To run: 
+
+(in the build directory)
+
+./as2
+
+enumarate controls: 
+
+w: move away from cam 
+s: move towards cam
+a:move left 
+d: move right
+q: move up 
+e: move right 
+space: stop moving 
+
+QA: Yes, we can remap the controls to a much more intuitive aproach by mapping the keys to the world axis. This is because the user can untuitively 
+recognize that pushing W means go forawrd, and pushing s means go backwards. Thus this implimentation would be possible.
