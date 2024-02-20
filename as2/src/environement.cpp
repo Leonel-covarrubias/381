@@ -49,7 +49,9 @@ int main(){
     ground.materials[0].maps[MATERIAL_MAP_DIFFUSE].texture = grass; 
 
     float speed = 0; 
-    float acceleration = 10; 
+    float speed2 = 0; 
+    float speed3 = 0; 
+    float acceleration = 20; 
     raylib::Vector3 position = {10,0,0}; 
     raylib::Degree heading = 0; 
     raylib::Vector3 velocity = {0,0,0}; 
@@ -89,54 +91,45 @@ int main(){
                 if(IsKeyDown(KEY_A)){
                     speed += acceleration * window.GetFrameTime(); 
                     velocity.x = speed; 
-                    velocity.y = 0;
-                    velocity.z = 0;
                     
                 }
 
-                // if(IsKeyDown(KEY_S))
-                //     speed += acceleration * window.GetFrameTime(); 
-                //     velocity.z = -speed;
                 
                 if(IsKeyDown(KEY_D)){
-                    speed += acceleration * window.GetFrameTime(); 
-                    velocity.x = -speed; 
-                    velocity.y = 0;
-                    velocity.z = 0;
+                    speed -= acceleration * window.GetFrameTime(); 
+                    velocity.x = speed ; 
                 }
                 if(IsKeyDown(KEY_W)){
-                    speed += acceleration * window.GetFrameTime(); 
-                    velocity.x = 0; 
-                    velocity.y = 0;
-                    velocity.z = speed;
+                     speed2 += acceleration * window.GetFrameTime(); 
+
+                    velocity.z = speed2;
                 }
                 if(IsKeyDown(KEY_S)){
-                    speed += acceleration * window.GetFrameTime(); 
-                    velocity.x = 0; 
-                    velocity.y = 0;
-                    velocity.z = -speed;
+                    speed2 -= acceleration * window.GetFrameTime(); 
+                   
+                    velocity.z = speed2;
                 }
                 if(IsKeyDown(KEY_Q)){
-                    speed += acceleration * window.GetFrameTime(); 
-                    velocity.x = 0; 
-                    velocity.y = speed;
-                    velocity.z =0;
+                     speed3 += acceleration * window.GetFrameTime(); 
+                   
+                    velocity.y = speed3;
                 }
                  if(IsKeyDown(KEY_E)){
-                    speed += acceleration * window.GetFrameTime(); 
-                    velocity.x = 0; 
-                    if(position.y>=0){
-                        velocity.y = -speed;}
-                    else{
-                        velocity.y = 0;    
-                    }
-                    velocity.z =0;
+                    speed3 -= acceleration * window.GetFrameTime(); 
+                   
+                    velocity.y = speed3;
                 }
-                if(IsKeyDown(KEY_SPACE)){
-                    speed += 0; 
+                    
+                if(IsKeyPressed (KEY_SPACE)){
                     velocity.x = 0; 
                     velocity.y = 0;
                     velocity.z = 0;
+                    
+                    speed = 0;
+                    speed2 = 0 ;
+                    speed3 = 0; 
+                    
+                    
                 }   
 
                 position += velocity * window.GetFrameTime(); 
@@ -148,3 +141,4 @@ int main(){
         
     }
 }
+
