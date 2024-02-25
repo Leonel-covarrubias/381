@@ -8,11 +8,13 @@ concept Transformer = requires(T t, raylib:: Transform m){
     {t.operator()(m) } -> std::convertible_to<raylib::Transform>; 
 };
 
-void DrawBoundedModel (raylib::Model& model, Transformer auto transformer){
+void DrawBoundedModel (raylib::Model& model, Transformer auto transformer,int planeindex, int isPLane){
     raylib::Transform backupTransform = model.transform; 
     model.transform = transformer(backupTransform); 
     model.Draw({});
-    model.GetTransformedBoundingBox().Draw(); 
+    if(planeindex == isPLane){ 
+        model.GetTransformedBoundingBox().Draw(); 
+    }
     model.transform = backupTransform;
 }
 
@@ -20,7 +22,7 @@ void DrawBoundedModel (raylib::Model& model, Transformer auto transformer){
 
 int main(){
     SetConfigFlags(FLAG_WINDOW_RESIZABLE);
-    raylib::Window window (800, 800, "CS381 - Assignment 2");
+    raylib::Window window (800, 800, "CS381 - Assignment 3");
     
 
     raylib::Model bad("bad.obj");
@@ -52,13 +54,19 @@ int main(){
     float speed2 = 0; 
     float speed3 = 0; 
     float acceleration = 20; 
-    raylib::Vector3 position1 = {10,0,0}; 
-    raylib::Vector3 position2 = {10,0,0}; 
-    raylib::Degree heading = 0; 
-    raylib::Vector3 velocity1 = {0,0,0}; 
-    raylib::Vector3 velocity2 = {0,0,0};
 
+    raylib::Vector3 position1 = {0,0,0}; 
+    raylib::Vector3 position2 = {50,0,0}; 
+    raylib::Vector3 position3 = {-50,0,0}; 
+
+    raylib::Degree heading1 = 0; 
+    raylib::Degree heading2 = 0; 
+    raylib::Degree heading3 = 0; 
+
+    
     int currentPlane = 1; 
+
+    
    // cs31::SkyBox skybox ("../textures/skybox.png"); 
    
     raylib::Model defaultCube ("bad.obj"); 
@@ -80,38 +88,56 @@ int main(){
             
                 window.ClearBackground(GRAY); 
                 ground.Draw({0,0,0}); 
-                plane.Draw({50,10,10}); 
                
-                DrawBoundedModel(plane, [&position1,&heading](raylib::Transform t) -> raylib ::Transform{
-                    return t.Translate(position1).RotateY(heading).Scale(2,2,2);
-                });
-                DrawBoundedModel(plane, [&position2,&heading](raylib::Transform t) -> raylib ::Transform{
-                    return t.Translate(position2).RotateY(heading).Scale(2,2,2);
-                });
+               
+                DrawBoundedModel(plane, [&position1,&heading1](raylib::Transform t) -> raylib ::Transform{
+                    return t.Translate(position1).RotateY(heading1).Scale(1,1,1);
+                },1,currentPlane);
+                DrawBoundedModel(plane, [&position2,&heading2](raylib::Transform t) -> raylib ::Transform{
+                    return t.Translate(position2).RotateY(heading2).Scale(1,1,1);
+                },2,currentPlane);
+                 DrawBoundedModel(plane, [&position3,&heading3](raylib::Transform t) -> raylib ::Transform{
+                    return t.Translate(position3).RotateY(heading3).Scale(1,1,1);
+                },3,currentPlane);
 
-                if (IsKeyDown(KEY_TAB)) {
-            // Switch between planes
-           currentPlane = (currentPlane == 1) ? 2 : 1;
+                raylib::Vector3 velocity1 = {speed1 *cos(heading1.RadianValue()), 0, -speed1 *sin(heading1.RadianValue())}; 
+                position1 += velocity1 * window.GetFrameTime();
+
+                raylib::Vector3 velocity2 = {speed2 *cos(heading2.RadianValue()), 0, -speed2 *sin(heading2.RadianValue())}; 
+                position2 += velocity2 * window.GetFrameTime();
+
+                raylib::Vector3 velocity3 = {speed3 *cos(heading3.RadianValue()), 0, -speed3 *sin(heading3.RadianValue())}; 
+                position3 += velocity3 * window.GetFrameTime();
+
+
+                if (IsKeyPressed (KEY_TAB)) {
+            
+                 if(currentPlane == 3){
+                    currentPlane = 1;
+                 }
+                 else{
+                    currentPlane++; 
+                 }
+                 
         }
 
         switch (currentPlane) {
             case 1:
-                // Handle plane 1 controls
+                
                 if (IsKeyDown(KEY_A)) {
-                    speed1 += acceleration * GetFrameTime();
-                    velocity1.x = speed1;
+                    heading1 += 5 ; 
+    
                 }
                 if (IsKeyDown(KEY_D)) {
-                    speed1 -= acceleration * GetFrameTime();
-                    velocity1.x = speed1;
+                     heading1 -= 5 ; 
+    
                 }
                 if (IsKeyDown(KEY_W)) {
-                    speed2 += acceleration * GetFrameTime();
-                    velocity1.z = speed2;
+                    speed1 += acceleration * GetFrameTime();
                 }
                 if (IsKeyDown(KEY_S)) {
-                    speed2 -= acceleration * GetFrameTime();
-                    velocity1.z = speed2;
+                    speed1 -= acceleration * GetFrameTime();
+                    
                 }
                 if (IsKeyDown(KEY_Q)) {
                     speed2 += acceleration * GetFrameTime();
@@ -121,54 +147,78 @@ int main(){
                     speed2 -= acceleration * GetFrameTime();
                     velocity1.y = speed2;
                 }
+                if (IsKeyPressed(KEY_SPACE)) {
+                    velocity1.x = 0; 
+                    velocity1.y = 0;
+                    velocity1.z = 0;
+                    speed1 = 0; } 
+                    
                 break;
             case 2:
-                // Handle plane 2 controls
+                
                 if (IsKeyDown(KEY_A)) {
-                    speed1 += acceleration * GetFrameTime();
-                    velocity2.x = speed1;
+                    heading2 += 5 ; 
+    
                 }
                 if (IsKeyDown(KEY_D)) {
-                    speed1 -= acceleration * GetFrameTime();
-                    velocity2.x = speed1;
+                     heading2 -= 5 ; 
+    
                 }
                 if (IsKeyDown(KEY_W)) {
                     speed2 += acceleration * GetFrameTime();
-                    velocity2.z = speed2;
                 }
                 if (IsKeyDown(KEY_S)) {
                     speed2 -= acceleration * GetFrameTime();
-                    velocity2.z = speed2;
+                    
                 }
                 if (IsKeyDown(KEY_Q)) {
                     speed2 += acceleration * GetFrameTime();
-                    velocity2.y = speed2;
+                    velocity1.y = speed2;
                 }
                 if (IsKeyDown(KEY_E)) {
                     speed2 -= acceleration * GetFrameTime();
-                    velocity2.y = speed2;
+                    velocity1.y = speed2;
                 }
+                if (IsKeyPressed(KEY_SPACE)) {
+                    velocity2.x = 0; 
+                    velocity2.y = 0;
+                    velocity2.z = 0;
+                    speed2 = 0; } 
+                break;
+            case 3:
+               if (IsKeyDown(KEY_A)) {
+                    heading3 += 5 ; 
+    
+                }
+                if (IsKeyDown(KEY_D)) {
+                     heading3 -= 5 ; 
+    
+                }
+                if (IsKeyDown(KEY_W)) {
+                    speed3 += acceleration * GetFrameTime();
+                }
+                if (IsKeyDown(KEY_S)) {
+                    speed3 -= acceleration * GetFrameTime();
+                    
+                }
+                if (IsKeyDown(KEY_Q)) {
+                    speed2 += acceleration * GetFrameTime();
+                    velocity1.y = speed2;
+                }
+                if (IsKeyDown(KEY_E)) {
+                    speed2 -= acceleration * GetFrameTime();
+                    velocity1.y = speed2;
+                }
+                if (IsKeyPressed(KEY_SPACE)) {
+                    velocity3.x = 0; 
+                    velocity3.y = 0;
+                    velocity3.z = 0;
+                    speed3 = 0; } 
                 break;
         }
 
-        // Reset speeds and velocities on space key press
-        if (IsKeyPressed(KEY_SPACE)) {
-            speed1 = 0.0f;
-            speed2 = 0.0f;
-            velocity1.x = 0; 
-            velocity1.y = 0;
-            velocity1.z = 0;
-            // velocity2 = { 0,0,0};
-        }
+      
 
-        // Update positions
-        position1.x += velocity1.x * GetFrameTime();
-        position1.y += velocity1.y * GetFrameTime();
-        position1.z += velocity1.z * GetFrameTime();
-
-        position2.x += velocity2.x * GetFrameTime();
-        position2.y += velocity2.y * GetFrameTime();
-        position2.z += velocity2.z * GetFrameTime();
 
             }
             camera.EndMode(); 
