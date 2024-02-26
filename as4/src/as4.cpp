@@ -1,6 +1,9 @@
 #include "raylib-cpp.hpp"
 #include "rlgl.h"
-//#include "skybox.hpp"
+
+#include <cstdlib> 
+#include <ctime>
+#include <iostream>
 
 
 template <typename T>
@@ -37,8 +40,7 @@ int main(){
    
     raylib::Text text;
 
-    // Skybox skybox; 
-    // skybox.Load("textures/skybox.png"); 
+    
     raylib::Model plane = LoadModel ("meshes/PolyPlane.glb"); 
     auto mesh = raylib::Mesh::Plane (10'000,10'000, 50, 50, 25); 
     raylib::Model ground = ((raylib::Mesh*)&mesh)->LoadModelFrom(); 
@@ -65,18 +67,57 @@ int main(){
     raylib::Degree heading2 = 0; 
     raylib::Degree heading3 = 0; 
 
+    srand(time(NULL));
+
+    // Load cube model
+    raylib::Model cube("bad.obj");
+
+    // Initialize cube position and velocity
+    raylib::Vector3 cubePosition = {0, 100, 0.0f};
+    raylib::Vector3 cubeVelocity = {0.0f, -10.0f, 0.0f};
+
     
     int currentPlane = 1; 
 
     
-   // cs31::SkyBox skybox ("../textures/skybox.png"); 
+   
    
     raylib::Model defaultCube ("bad.obj"); 
     float wtimer = 0; 
  
     while (!window.ShouldClose()){
         
-      
+        cubeVelocity.x = static_cast<float>(rand() % 3 - 1) * 5; // Random velocity in x direction
+        cubeVelocity.y = static_cast<float>(rand() % 3 - 1) * 5; // Random velocity in y direction
+        cubeVelocity.z = static_cast<float>(rand() % 3 - 1) * 5; // Random velocity in z direction
+
+        // update bomb position 
+        cubePosition.x += cubeVelocity.x;
+        cubePosition.y += cubeVelocity.y;
+        cubePosition.z += cubeVelocity.z;
+
+
+        // The following clamps are for game boundaries 
+        cubePosition.x = Clamp(cubePosition.x, -450.0f, 450.0f);
+        cubePosition.y = Clamp(cubePosition.y, 0.0f, 200.0f);
+        cubePosition.z = Clamp(cubePosition.z, -200.0f, 450.0f);
+
+       
+        position1.x = Clamp(position1.x, -450.0f, 450.0f);
+        position1.y = Clamp(position1.y, 0.0f, 200.0f);
+        position1.z = Clamp(position1.z, -200.0f, 450.0f);
+
+        position2.x = Clamp(position2.x, -450.0f, 450.0f);
+        position2.y = Clamp(position2.y, 0.0f, 200.0f);
+        position2.z = Clamp(position2.z, -200.0f, 450.0f);
+
+        position3.x = Clamp(position3.x, -450.0f, 450.0f);
+        position3.y = Clamp(position3.y, 0.0f, 200.0f);
+        position3.z = Clamp(position3.z, -200.0f, 450.0f);
+
+        
+
+        
 
         
 
@@ -90,18 +131,26 @@ int main(){
             
                 window.ClearBackground(GRAY); 
                 ground.Draw({0,0,0}); 
+
+                //draw bomb model 
                
+                DrawBoundedModel(cube, [&](raylib::Transform t) -> raylib::Transform {
+                return t.Translate(cubePosition).Scale(15,15,15);
+                }, 0, 0);
                
-                DrawBoundedModel(plane, [&position1,&heading1](raylib::Transform t) -> raylib ::Transform{
-                    return t.Translate(position1).RotateY(heading1).Scale(1,1,1);
-                },1,currentPlane);
+                // draw plane models 
                 DrawBoundedModel(plane, [&position2,&heading2](raylib::Transform t) -> raylib ::Transform{
                     return t.Translate(position2).RotateY(heading2).Scale(1,1,1);
                 },2,currentPlane);
                  DrawBoundedModel(plane, [&position3,&heading3](raylib::Transform t) -> raylib ::Transform{
                     return t.Translate(position3).RotateY(heading3).Scale(1,1,1);
                 },3,currentPlane);
+                DrawBoundedModel(plane, [&position1,&heading1](raylib::Transform t) -> raylib ::Transform{
+                    return t.Translate(position1).RotateY(heading1).Scale(1,1,1);
+                },1,currentPlane);
 
+
+                // Update plane positions 
                 raylib::Vector3 velocity1 = {speed1 *cos(heading1.RadianValue()), flightspeed1, -speed1 *sin(heading1.RadianValue())}; 
                 position1 += velocity1 * window.GetFrameTime();
 
@@ -112,16 +161,23 @@ int main(){
                 position3 += velocity3 * window.GetFrameTime();
 
 
-                if (IsKeyPressed (KEY_TAB)) {
+                //collision detection, if its within range of a plane, then end program 
+                
+                 if ((std::abs(cubePosition.x - position1.x) <= 30.0f &&
+             std::abs(cubePosition.y - position1.y) <= 10.0f &&
+             std::abs(cubePosition.z - position1.z) <= 30.0f) ||
+            (std::abs(cubePosition.x - position2.x) <= 30.0f &&
+             std::abs(cubePosition.y - position2.y) <= 10.0f &&
+             std::abs(cubePosition.z - position2.z) <= 30.0f) ||
+            (std::abs(cubePosition.x - position3.x) <= 30.0f &&
+             std::abs(cubePosition.y - position3.y) <= 10.0f &&
+             std::abs(cubePosition.z - position3.z) <= 30.0f)) {
             
-                 if(currentPlane == 3){
-                    currentPlane = 1;
-                 }
-                 else{
-                    currentPlane++; 
-                 }
-                 
+            exit(EXIT_SUCCESS); 
         }
+
+
+                // Plane controls implimented below 
 
         switch (currentPlane) {
             case 1:
@@ -155,6 +211,13 @@ int main(){
                     speed1 = 0;
                     flightspeed1 = 0; } 
                     
+                 if (IsKeyPressed(KEY_TAB)) {
+                    velocity1.x = 0; 
+                    velocity1.y = 0;
+                    velocity1.z = 0;
+                    speed1 = 0;
+                    flightspeed1 = 0; } 
+                        
                 break;
             case 2:
                 
@@ -186,6 +249,12 @@ int main(){
                     velocity2.z = 0;
                     speed2 = 0;
                     flightspeed2 = 0;  } 
+                if (IsKeyPressed(KEY_TAB)) {
+                    velocity2.x = 0; 
+                    velocity2.y = 0;
+                    velocity2.z = 0;
+                    speed2 = 0;
+                    flightspeed2 = 0;  }     
                 break;
             case 3:
                if (IsKeyDown(KEY_A)) {
@@ -216,10 +285,27 @@ int main(){
                     velocity3.z = 0;
                     speed3 = 0;
                     flightspeed3 = 0; } 
+                if (IsKeyPressed(KEY_TAB)) {
+                    velocity3.x = 0; 
+                    velocity3.y = 0;
+                    velocity3.z = 0;
+                    speed3 = 0;
+                    flightspeed3 = 0; }    
                 break;
         }
 
-      
+
+        // If tab is pressed, select the next plane  
+      if (IsKeyPressed (KEY_TAB)) {
+            
+                 if(currentPlane == 3){
+                    currentPlane = 1;
+                 }
+                 else{
+                    currentPlane++; 
+                 }
+                 
+                }
 
 
             }
