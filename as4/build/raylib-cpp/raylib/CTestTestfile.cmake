@@ -1,6 +1,6 @@
 # CMake generated Testfile for 
-# Source directory: /home/packnel87/Desktop/GameDev/as4/raylib-cpp/raylib
-# Build directory: /home/packnel87/Desktop/GameDev/as4/build/raylib-cpp/raylib
+# Source directory: /home/packnel87/GameDev/381/as4/raylib-cpp/raylib
+# Build directory: /home/packnel87/GameDev/381/as4/build/raylib-cpp/raylib
 # 
 # This file includes the relevant testing commands required for 
 # testing this directory and lists subdirectories to be tested as well.

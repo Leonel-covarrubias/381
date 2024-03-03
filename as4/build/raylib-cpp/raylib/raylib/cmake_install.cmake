@@ -1,4 +1,4 @@
-# Install script for directory: /home/packnel87/Desktop/GameDev/as4/raylib-cpp/raylib/src
+# Install script for directory: /home/packnel87/GameDev/381/as4/raylib-cpp/raylib/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -43,32 +43,32 @@ if(NOT DEFINED CMAKE_OBJDUMP)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "/home/packnel87/Desktop/GameDev/as4/build/raylib-cpp/raylib/raylib/libraylib.a")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "/home/packnel87/GameDev/381/as4/build/raylib-cpp/raylib/raylib/libraylib.a")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE FILE FILES
-    "/home/packnel87/Desktop/GameDev/as4/raylib-cpp/raylib/src/raylib.h"
-    "/home/packnel87/Desktop/GameDev/as4/raylib-cpp/raylib/src/rlgl.h"
-    "/home/packnel87/Desktop/GameDev/as4/raylib-cpp/raylib/src/raymath.h"
+    "/home/packnel87/GameDev/381/as4/raylib-cpp/raylib/src/raylib.h"
+    "/home/packnel87/GameDev/381/as4/raylib-cpp/raylib/src/rlgl.h"
+    "/home/packnel87/GameDev/381/as4/raylib-cpp/raylib/src/raymath.h"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/packnel87/Desktop/GameDev/as4/build/raylib-cpp/raylib/raylib/raylib.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/packnel87/GameDev/381/as4/build/raylib-cpp/raylib/raylib/raylib.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/raylib" TYPE FILE FILES "/home/packnel87/Desktop/GameDev/as4/build/raylib-cpp/raylib/raylib/raylib-config-version.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/raylib" TYPE FILE FILES "/home/packnel87/GameDev/381/as4/build/raylib-cpp/raylib/raylib/raylib-config-version.cmake")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/raylib" TYPE FILE FILES "/home/packnel87/Desktop/GameDev/as4/raylib-cpp/raylib/src/../cmake/raylib-config.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/raylib" TYPE FILE FILES "/home/packnel87/GameDev/381/as4/raylib-cpp/raylib/src/../cmake/raylib-config.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/packnel87/Desktop/GameDev/as4/build/raylib-cpp/raylib/raylib/external/glfw/cmake_install.cmake")
+  include("/home/packnel87/GameDev/381/as4/build/raylib-cpp/raylib/raylib/external/glfw/cmake_install.cmake")
 
 endif()
 

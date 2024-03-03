@@ -1,4 +1,4 @@
-# Install script for directory: /home/packnel87/Desktop/GameDev/as4/raylib-cpp/raylib/src/external/glfw/src
+# Install script for directory: /home/packnel87/GameDev/381/as4/raylib-cpp/raylib/src/external/glfw/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

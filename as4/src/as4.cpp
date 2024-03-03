@@ -25,7 +25,7 @@ void DrawBoundedModel (raylib::Model& model, Transformer auto transformer,int pl
 
 int main(){
     SetConfigFlags(FLAG_WINDOW_RESIZABLE);
-    raylib::Window window (800, 800, "CS381 - Assignment 3");
+    raylib::Window window (800, 800, "CS381 - Assignment 4 - Avoid the Bomb game");
     
 
     raylib::Model bad("bad.obj");
@@ -42,6 +42,7 @@ int main(){
 
     
     raylib::Model plane = LoadModel ("meshes/PolyPlane.glb"); 
+    raylib::Model bomb = LoadModel ("meshes/bomb.glb"); 
     auto mesh = raylib::Mesh::Plane (10'000,10'000, 50, 50, 25); 
     raylib::Model ground = ((raylib::Mesh*)&mesh)->LoadModelFrom(); 
     raylib::Texture grass ("textures/grass.jpg"); 
@@ -70,7 +71,7 @@ int main(){
     srand(time(NULL));
 
     // Load cube model
-    raylib::Model cube("bad.obj");
+    // raylib::Model cube("meshes/bomb.obj");
 
     // Initialize cube position and velocity
     raylib::Vector3 cubePosition = {0, 100, 0.0f};
@@ -87,9 +88,9 @@ int main(){
  
     while (!window.ShouldClose()){
         
-        cubeVelocity.x = static_cast<float>(rand() % 3 - 1) * 5; // Random velocity in x direction
-        cubeVelocity.y = static_cast<float>(rand() % 3 - 1) * 5; // Random velocity in y direction
-        cubeVelocity.z = static_cast<float>(rand() % 3 - 1) * 5; // Random velocity in z direction
+        cubeVelocity.x = static_cast<float>(rand() % 3 - 1) * 10; // Random velocity in x direction
+        cubeVelocity.y = static_cast<float>(rand() % 3 - 1) * 10; // Random velocity in y direction
+        cubeVelocity.z = static_cast<float>(rand() % 3 - 1) * 10; // Random velocity in z direction
 
         // update bomb position 
         cubePosition.x += cubeVelocity.x;
@@ -134,8 +135,8 @@ int main(){
 
                 //draw bomb model 
                
-                DrawBoundedModel(cube, [&](raylib::Transform t) -> raylib::Transform {
-                return t.Translate(cubePosition).Scale(15,15,15);
+                DrawBoundedModel(bomb, [&](raylib::Transform t) -> raylib::Transform {
+                return t.Translate(cubePosition).Scale(20,20,20);
                 }, 0, 0);
                
                 // draw plane models 

@@ -1,13 +1,12 @@
 CMakeFiles/as4.dir/src/as4.cpp.o: \
- /home/packnel87/Desktop/GameDev/as4/src/as4.cpp \
- /usr/include/stdc-predef.h \
- /home/packnel87/Desktop/GameDev/as4/raylib-cpp/include/raylib-cpp.hpp \
- /home/packnel87/Desktop/GameDev/as4/raylib-cpp/include/./AudioDevice.hpp \
- /home/packnel87/Desktop/GameDev/as4/raylib-cpp/include/././raylib.hpp \
- /home/packnel87/Desktop/GameDev/as4/raylib-cpp/raylib/src/raylib.h \
+ /home/packnel87/GameDev/381/as4/src/as4.cpp /usr/include/stdc-predef.h \
+ /home/packnel87/GameDev/381/as4/raylib-cpp/include/raylib-cpp.hpp \
+ /home/packnel87/GameDev/381/as4/raylib-cpp/include/./AudioDevice.hpp \
+ /home/packnel87/GameDev/381/as4/raylib-cpp/include/././raylib.hpp \
+ /home/packnel87/GameDev/381/as4/raylib-cpp/raylib/src/raylib.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/stdarg.h \
- /home/packnel87/Desktop/GameDev/as4/raylib-cpp/include/././raylib-cpp-utils.hpp \
- /home/packnel87/Desktop/GameDev/as4/raylib-cpp/include/././RaylibException.hpp \
+ /home/packnel87/GameDev/381/as4/raylib-cpp/include/././raylib-cpp-utils.hpp \
+ /home/packnel87/GameDev/381/as4/raylib-cpp/include/././RaylibException.hpp \
  /usr/include/c++/11/stdexcept /usr/include/c++/11/exception \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
@@ -149,11 +148,11 @@ CMakeFiles/as4.dir/src/as4.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/types/error_t.h \
  /usr/include/c++/11/bits/charconv.h \
  /usr/include/c++/11/bits/basic_string.tcc \
- /home/packnel87/Desktop/GameDev/as4/raylib-cpp/include/./././raylib.hpp \
- /home/packnel87/Desktop/GameDev/as4/raylib-cpp/include/./AudioStream.hpp \
- /home/packnel87/Desktop/GameDev/as4/raylib-cpp/include/./BoundingBox.hpp \
- /home/packnel87/Desktop/GameDev/as4/raylib-cpp/include/./Camera2D.hpp \
- /home/packnel87/Desktop/GameDev/as4/raylib-cpp/include/././Vector2.hpp \
+ /home/packnel87/GameDev/381/as4/raylib-cpp/include/./././raylib.hpp \
+ /home/packnel87/GameDev/381/as4/raylib-cpp/include/./AudioStream.hpp \
+ /home/packnel87/GameDev/381/as4/raylib-cpp/include/./BoundingBox.hpp \
+ /home/packnel87/GameDev/381/as4/raylib-cpp/include/./Camera2D.hpp \
+ /home/packnel87/GameDev/381/as4/raylib-cpp/include/././Vector2.hpp \
  /usr/include/c++/11/cmath /usr/include/math.h \
  /usr/include/x86_64-linux-gnu/bits/math-vector.h \
  /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h \
@@ -177,66 +176,66 @@ CMakeFiles/as4.dir/src/as4.cpp.o: \
  /usr/include/c++/11/tr1/poly_hermite.tcc \
  /usr/include/c++/11/tr1/poly_laguerre.tcc \
  /usr/include/c++/11/tr1/riemann_zeta.tcc \
- /home/packnel87/Desktop/GameDev/as4/raylib-cpp/include/./././raymath.hpp \
- /home/packnel87/Desktop/GameDev/as4/raylib-cpp/raylib/src/raymath.h \
+ /home/packnel87/GameDev/381/as4/raylib-cpp/include/./././raymath.hpp \
+ /home/packnel87/GameDev/381/as4/raylib-cpp/raylib/src/raymath.h \
  /usr/include/c++/11/math.h \
- /home/packnel87/Desktop/GameDev/as4/raylib-cpp/include/./././raylib-cpp-utils.hpp \
- /home/packnel87/Desktop/GameDev/as4/raylib-cpp/include/./././RadiansDegrees.hpp \
- /home/packnel87/Desktop/GameDev/as4/raylib-cpp/include/././././raylib.hpp \
- /home/packnel87/Desktop/GameDev/as4/raylib-cpp/include/././././raylib-cpp-utils.hpp \
- /home/packnel87/Desktop/GameDev/as4/raylib-cpp/include/././././raymath.hpp \
- /home/packnel87/Desktop/GameDev/as4/raylib-cpp/include/././RadiansDegrees.hpp \
- /home/packnel87/Desktop/GameDev/as4/raylib-cpp/include/./Camera3D.hpp \
- /home/packnel87/Desktop/GameDev/as4/raylib-cpp/include/././Vector3.hpp \
- /home/packnel87/Desktop/GameDev/as4/raylib-cpp/include/./Color.hpp \
- /home/packnel87/Desktop/GameDev/as4/raylib-cpp/include/././Vector4.hpp \
+ /home/packnel87/GameDev/381/as4/raylib-cpp/include/./././raylib-cpp-utils.hpp \
+ /home/packnel87/GameDev/381/as4/raylib-cpp/include/./././RadiansDegrees.hpp \
+ /home/packnel87/GameDev/381/as4/raylib-cpp/include/././././raylib.hpp \
+ /home/packnel87/GameDev/381/as4/raylib-cpp/include/././././raylib-cpp-utils.hpp \
+ /home/packnel87/GameDev/381/as4/raylib-cpp/include/././././raymath.hpp \
+ /home/packnel87/GameDev/381/as4/raylib-cpp/include/././RadiansDegrees.hpp \
+ /home/packnel87/GameDev/381/as4/raylib-cpp/include/./Camera3D.hpp \
+ /home/packnel87/GameDev/381/as4/raylib-cpp/include/././Vector3.hpp \
+ /home/packnel87/GameDev/381/as4/raylib-cpp/include/./Color.hpp \
+ /home/packnel87/GameDev/381/as4/raylib-cpp/include/././Vector4.hpp \
  /usr/include/c++/11/utility /usr/include/c++/11/bits/stl_relops.h \
- /home/packnel87/Desktop/GameDev/as4/raylib-cpp/include/./Font.hpp \
+ /home/packnel87/GameDev/381/as4/raylib-cpp/include/./Font.hpp \
  /usr/include/c++/11/span /usr/include/c++/11/array \
  /usr/include/c++/11/cstddef \
- /home/packnel87/Desktop/GameDev/as4/raylib-cpp/include/././TextureUnmanaged.hpp \
- /home/packnel87/Desktop/GameDev/as4/raylib-cpp/include/./././Vector2.hpp \
- /home/packnel87/Desktop/GameDev/as4/raylib-cpp/include/./././Material.hpp \
+ /home/packnel87/GameDev/381/as4/raylib-cpp/include/././TextureUnmanaged.hpp \
+ /home/packnel87/GameDev/381/as4/raylib-cpp/include/./././Vector2.hpp \
+ /home/packnel87/GameDev/381/as4/raylib-cpp/include/./././Material.hpp \
  /usr/include/c++/11/vector /usr/include/c++/11/bits/stl_uninitialized.h \
  /usr/include/c++/11/bits/stl_vector.h \
  /usr/include/c++/11/bits/stl_bvector.h \
  /usr/include/c++/11/bits/vector.tcc \
- /home/packnel87/Desktop/GameDev/as4/raylib-cpp/include/./././RaylibException.hpp \
- /home/packnel87/Desktop/GameDev/as4/raylib-cpp/include/./././Image.hpp \
- /home/packnel87/Desktop/GameDev/as4/raylib-cpp/include/././././RaylibException.hpp \
- /home/packnel87/Desktop/GameDev/as4/raylib-cpp/include/././././Color.hpp \
- /home/packnel87/Desktop/GameDev/as4/raylib-cpp/include/./Functions.hpp \
- /home/packnel87/Desktop/GameDev/as4/raylib-cpp/include/./Image.hpp \
- /home/packnel87/Desktop/GameDev/as4/raylib-cpp/include/./Material.hpp \
- /home/packnel87/Desktop/GameDev/as4/raylib-cpp/include/./Matrix.hpp \
- /home/packnel87/Desktop/GameDev/as4/raylib-cpp/include/././raymath.hpp \
- /home/packnel87/Desktop/GameDev/as4/raylib-cpp/include/./Mesh.hpp \
- /home/packnel87/Desktop/GameDev/as4/raylib-cpp/include/././BoundingBox.hpp \
- /home/packnel87/Desktop/GameDev/as4/raylib-cpp/include/./Model.hpp \
- /home/packnel87/Desktop/GameDev/as4/raylib-cpp/include/././Mesh.hpp \
- /home/packnel87/Desktop/GameDev/as4/raylib-cpp/include/./ModelAnimation.hpp \
- /home/packnel87/Desktop/GameDev/as4/raylib-cpp/include/./Music.hpp \
- /home/packnel87/Desktop/GameDev/as4/raylib-cpp/include/./RadiansDegrees.hpp \
- /home/packnel87/Desktop/GameDev/as4/raylib-cpp/include/./Ray.hpp \
- /home/packnel87/Desktop/GameDev/as4/raylib-cpp/include/././RayCollision.hpp \
- /home/packnel87/Desktop/GameDev/as4/raylib-cpp/include/./RaylibException.hpp \
- /home/packnel87/Desktop/GameDev/as4/raylib-cpp/include/./RayCollision.hpp \
- /home/packnel87/Desktop/GameDev/as4/raylib-cpp/include/./Rectangle.hpp \
- /home/packnel87/Desktop/GameDev/as4/raylib-cpp/include/./RenderTexture.hpp \
- /home/packnel87/Desktop/GameDev/as4/raylib-cpp/include/./Shader.hpp \
- /home/packnel87/Desktop/GameDev/as4/raylib-cpp/include/./Texture.hpp \
- /home/packnel87/Desktop/GameDev/as4/raylib-cpp/include/./Sound.hpp \
- /home/packnel87/Desktop/GameDev/as4/raylib-cpp/include/./Text.hpp \
- /home/packnel87/Desktop/GameDev/as4/raylib-cpp/include/./Texture.hpp \
- /home/packnel87/Desktop/GameDev/as4/raylib-cpp/include/./TextureUnmanaged.hpp \
- /home/packnel87/Desktop/GameDev/as4/raylib-cpp/include/./Touch.hpp \
- /home/packnel87/Desktop/GameDev/as4/raylib-cpp/include/./Vector2.hpp \
- /home/packnel87/Desktop/GameDev/as4/raylib-cpp/include/./Vector3.hpp \
- /home/packnel87/Desktop/GameDev/as4/raylib-cpp/include/./Vector4.hpp \
- /home/packnel87/Desktop/GameDev/as4/raylib-cpp/include/./VrStereoConfig.hpp \
- /home/packnel87/Desktop/GameDev/as4/raylib-cpp/include/./Wave.hpp \
- /home/packnel87/Desktop/GameDev/as4/raylib-cpp/include/./Window.hpp \
- /home/packnel87/Desktop/GameDev/as4/raylib-cpp/raylib/src/rlgl.h \
+ /home/packnel87/GameDev/381/as4/raylib-cpp/include/./././RaylibException.hpp \
+ /home/packnel87/GameDev/381/as4/raylib-cpp/include/./././Image.hpp \
+ /home/packnel87/GameDev/381/as4/raylib-cpp/include/././././RaylibException.hpp \
+ /home/packnel87/GameDev/381/as4/raylib-cpp/include/././././Color.hpp \
+ /home/packnel87/GameDev/381/as4/raylib-cpp/include/./Functions.hpp \
+ /home/packnel87/GameDev/381/as4/raylib-cpp/include/./Image.hpp \
+ /home/packnel87/GameDev/381/as4/raylib-cpp/include/./Material.hpp \
+ /home/packnel87/GameDev/381/as4/raylib-cpp/include/./Matrix.hpp \
+ /home/packnel87/GameDev/381/as4/raylib-cpp/include/././raymath.hpp \
+ /home/packnel87/GameDev/381/as4/raylib-cpp/include/./Mesh.hpp \
+ /home/packnel87/GameDev/381/as4/raylib-cpp/include/././BoundingBox.hpp \
+ /home/packnel87/GameDev/381/as4/raylib-cpp/include/./Model.hpp \
+ /home/packnel87/GameDev/381/as4/raylib-cpp/include/././Mesh.hpp \
+ /home/packnel87/GameDev/381/as4/raylib-cpp/include/./ModelAnimation.hpp \
+ /home/packnel87/GameDev/381/as4/raylib-cpp/include/./Music.hpp \
+ /home/packnel87/GameDev/381/as4/raylib-cpp/include/./RadiansDegrees.hpp \
+ /home/packnel87/GameDev/381/as4/raylib-cpp/include/./Ray.hpp \
+ /home/packnel87/GameDev/381/as4/raylib-cpp/include/././RayCollision.hpp \
+ /home/packnel87/GameDev/381/as4/raylib-cpp/include/./RaylibException.hpp \
+ /home/packnel87/GameDev/381/as4/raylib-cpp/include/./RayCollision.hpp \
+ /home/packnel87/GameDev/381/as4/raylib-cpp/include/./Rectangle.hpp \
+ /home/packnel87/GameDev/381/as4/raylib-cpp/include/./RenderTexture.hpp \
+ /home/packnel87/GameDev/381/as4/raylib-cpp/include/./Shader.hpp \
+ /home/packnel87/GameDev/381/as4/raylib-cpp/include/./Texture.hpp \
+ /home/packnel87/GameDev/381/as4/raylib-cpp/include/./Sound.hpp \
+ /home/packnel87/GameDev/381/as4/raylib-cpp/include/./Text.hpp \
+ /home/packnel87/GameDev/381/as4/raylib-cpp/include/./Texture.hpp \
+ /home/packnel87/GameDev/381/as4/raylib-cpp/include/./TextureUnmanaged.hpp \
+ /home/packnel87/GameDev/381/as4/raylib-cpp/include/./Touch.hpp \
+ /home/packnel87/GameDev/381/as4/raylib-cpp/include/./Vector2.hpp \
+ /home/packnel87/GameDev/381/as4/raylib-cpp/include/./Vector3.hpp \
+ /home/packnel87/GameDev/381/as4/raylib-cpp/include/./Vector4.hpp \
+ /home/packnel87/GameDev/381/as4/raylib-cpp/include/./VrStereoConfig.hpp \
+ /home/packnel87/GameDev/381/as4/raylib-cpp/include/./Wave.hpp \
+ /home/packnel87/GameDev/381/as4/raylib-cpp/include/./Window.hpp \
+ /home/packnel87/GameDev/381/as4/raylib-cpp/raylib/src/rlgl.h \
  /usr/include/c++/11/ctime /usr/include/c++/11/iostream \
  /usr/include/c++/11/ostream /usr/include/c++/11/ios \
  /usr/include/c++/11/bits/ios_base.h \

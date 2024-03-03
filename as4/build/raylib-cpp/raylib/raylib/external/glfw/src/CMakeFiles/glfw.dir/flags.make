@@ -4,7 +4,7 @@
 # compile C with /usr/bin/cc
 C_DEFINES = -D_DEFAULT_SOURCE -D_GLFW_X11
 
-C_INCLUDES = -I/home/packnel87/Desktop/GameDev/as4/raylib-cpp/raylib/src/external/glfw/include -I/home/packnel87/Desktop/GameDev/as4/raylib-cpp/raylib/src/external/glfw/src -I/home/packnel87/Desktop/GameDev/as4/build/raylib-cpp/raylib/raylib/external/glfw/src
+C_INCLUDES = -I/home/packnel87/GameDev/381/as4/raylib-cpp/raylib/src/external/glfw/include -I/home/packnel87/GameDev/381/as4/raylib-cpp/raylib/src/external/glfw/src -I/home/packnel87/GameDev/381/as4/build/raylib-cpp/raylib/raylib/external/glfw/src
 
 C_FLAGS = -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -fPIC -Wall -std=c99
 

@@ -1,7 +1,7 @@
 raylib-cpp/BufferedRaylib/FastSignals/libfastsignals/CMakeFiles/libfastsignals.dir/src/function_detail.cpp.o: \
- /home/packnel87/Desktop/GameDev/as4/raylib-cpp/BufferedRaylib/FastSignals/libfastsignals/src/function_detail.cpp \
+ /home/packnel87/GameDev/381/as4/raylib-cpp/BufferedRaylib/FastSignals/libfastsignals/src/function_detail.cpp \
  /usr/include/stdc-predef.h \
- /home/packnel87/Desktop/GameDev/as4/raylib-cpp/BufferedRaylib/FastSignals/libfastsignals/src/../include/function_detail.h \
+ /home/packnel87/GameDev/381/as4/raylib-cpp/BufferedRaylib/FastSignals/libfastsignals/src/../include/function_detail.h \
  /usr/include/c++/11/cassert \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \

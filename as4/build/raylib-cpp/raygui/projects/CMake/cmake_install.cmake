@@ -1,4 +1,4 @@
-# Install script for directory: /home/packnel87/Desktop/GameDev/as4/raylib-cpp/raygui/projects/CMake
+# Install script for directory: /home/packnel87/GameDev/381/as4/raylib-cpp/raygui/projects/CMake
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -43,6 +43,6 @@ if(NOT DEFINED CMAKE_OBJDUMP)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE FILE FILES "/home/packnel87/Desktop/GameDev/as4/raylib-cpp/raygui/projects/CMake/../../src/raygui.h")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE FILE FILES "/home/packnel87/GameDev/381/as4/raylib-cpp/raygui/projects/CMake/../../src/raygui.h")
 endif()
 

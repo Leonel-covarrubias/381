@@ -1,4 +1,4 @@
-# Install script for directory: /home/packnel87/Desktop/GameDev/as4/raylib-cpp/raylib/src/external/glfw
+# Install script for directory: /home/packnel87/GameDev/381/as4/raylib-cpp/raylib/src/external/glfw
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -44,6 +44,6 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/packnel87/Desktop/GameDev/as4/build/raylib-cpp/raylib/raylib/external/glfw/src/cmake_install.cmake")
+  include("/home/packnel87/GameDev/381/as4/build/raylib-cpp/raylib/raylib/external/glfw/src/cmake_install.cmake")
 endif()
 

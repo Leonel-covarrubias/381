@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/packnel87/Desktop/GameDev/as4
+CMAKE_SOURCE_DIR = /home/packnel87/GameDev/381/as4
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/packnel87/Desktop/GameDev/as4/build
+CMAKE_BINARY_DIR = /home/packnel87/GameDev/381/as4/build
 
 # Utility rule file for update_mappings.
 
@@ -67,8 +67,8 @@ include raylib-cpp/raylib/raylib/external/glfw/src/CMakeFiles/update_mappings.di
 include raylib-cpp/raylib/raylib/external/glfw/src/CMakeFiles/update_mappings.dir/progress.make
 
 raylib-cpp/raylib/raylib/external/glfw/src/CMakeFiles/update_mappings:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/packnel87/Desktop/GameDev/as4/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Updating gamepad mappings from upstream repository"
-	cd /home/packnel87/Desktop/GameDev/as4/raylib-cpp/raylib/src/external/glfw/src && /usr/bin/cmake -P /home/packnel87/Desktop/GameDev/as4/raylib-cpp/raylib/src/external/glfw/CMake/GenerateMappings.cmake mappings.h.in mappings.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/packnel87/GameDev/381/as4/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Updating gamepad mappings from upstream repository"
+	cd /home/packnel87/GameDev/381/as4/raylib-cpp/raylib/src/external/glfw/src && /usr/bin/cmake -P /home/packnel87/GameDev/381/as4/raylib-cpp/raylib/src/external/glfw/CMake/GenerateMappings.cmake mappings.h.in mappings.h
 
 update_mappings: raylib-cpp/raylib/raylib/external/glfw/src/CMakeFiles/update_mappings
 update_mappings: raylib-cpp/raylib/raylib/external/glfw/src/CMakeFiles/update_mappings.dir/build.make
@@ -79,10 +79,10 @@ raylib-cpp/raylib/raylib/external/glfw/src/CMakeFiles/update_mappings.dir/build:
 .PHONY : raylib-cpp/raylib/raylib/external/glfw/src/CMakeFiles/update_mappings.dir/build
 
 raylib-cpp/raylib/raylib/external/glfw/src/CMakeFiles/update_mappings.dir/clean:
-	cd /home/packnel87/Desktop/GameDev/as4/build/raylib-cpp/raylib/raylib/external/glfw/src && $(CMAKE_COMMAND) -P CMakeFiles/update_mappings.dir/cmake_clean.cmake
+	cd /home/packnel87/GameDev/381/as4/build/raylib-cpp/raylib/raylib/external/glfw/src && $(CMAKE_COMMAND) -P CMakeFiles/update_mappings.dir/cmake_clean.cmake
 .PHONY : raylib-cpp/raylib/raylib/external/glfw/src/CMakeFiles/update_mappings.dir/clean
 
 raylib-cpp/raylib/raylib/external/glfw/src/CMakeFiles/update_mappings.dir/depend:
-	cd /home/packnel87/Desktop/GameDev/as4/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/packnel87/Desktop/GameDev/as4 /home/packnel87/Desktop/GameDev/as4/raylib-cpp/raylib/src/external/glfw/src /home/packnel87/Desktop/GameDev/as4/build /home/packnel87/Desktop/GameDev/as4/build/raylib-cpp/raylib/raylib/external/glfw/src /home/packnel87/Desktop/GameDev/as4/build/raylib-cpp/raylib/raylib/external/glfw/src/CMakeFiles/update_mappings.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/packnel87/GameDev/381/as4/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/packnel87/GameDev/381/as4 /home/packnel87/GameDev/381/as4/raylib-cpp/raylib/src/external/glfw/src /home/packnel87/GameDev/381/as4/build /home/packnel87/GameDev/381/as4/build/raylib-cpp/raylib/raylib/external/glfw/src /home/packnel87/GameDev/381/as4/build/raylib-cpp/raylib/raylib/external/glfw/src/CMakeFiles/update_mappings.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : raylib-cpp/raylib/raylib/external/glfw/src/CMakeFiles/update_mappings.dir/depend
 
