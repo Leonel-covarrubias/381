@@ -6,7 +6,7 @@
 
 
 void PingButton(){ 
-    std::cout << "ping" <<std::endl; 
+    std::cout << "ping" <<std::endl;
 }
 #define GUI_VOLUMECONTROL_IMPLEMENTATION 
 #include "VolumeControl.h"
@@ -41,6 +41,30 @@ int main(){
                     PingButton();
                     ping.SetVolume(guiState.SFXSliderValue / 50); 
                     ping.Play(); 
+                     
+            } 
+            if (IsKeyDown(KEY_E)) {
+                    guiState.SFXSliderValue += 10* window.GetFrameTime(); 
+                     
+            } 
+            if (IsKeyDown(KEY_W)) {
+                    guiState.SFXSliderValue -= 10* window.GetFrameTime(); 
+                     
+            }
+            if (IsKeyDown(KEY_X)) {
+                    guiState.DialogueSliderValue -= 10* window.GetFrameTime(); 
+                     
+            } 
+            if (IsKeyDown(KEY_C)) {
+                    guiState.DialogueSliderValue += 10* window.GetFrameTime(); 
+                     
+            }
+            if (IsKeyDown(KEY_S)) {
+                    guiState.MusicSliderValue -= 10* window.GetFrameTime(); 
+                     
+            } 
+            if (IsKeyDown(KEY_D)) {
+                    guiState.MusicSliderValue += 10* window.GetFrameTime(); 
                      
             }  
             
