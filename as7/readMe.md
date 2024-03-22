@@ -21,7 +21,7 @@ mkdir build> cd build > cmake > make
 
 (in the build directory)
 
-./as4
+./as7
 
 
 ## How-To-Play 
@@ -36,12 +36,20 @@ If the bomb touches one of your planes, Game Over!
 Enter: Start Game 
 
 w: speed up
+
 s: slow down 
+
 a: turn right 
+
 d: turn left
+
 q: increase altitude 
+
 e: decrease altitude
+
 space: stop moving selected plane
+
 tab: Switch selected plane 
+
 
 
